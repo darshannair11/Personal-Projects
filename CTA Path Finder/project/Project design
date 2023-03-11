@@ -1,0 +1,119 @@
+1.Describe the user interface. What are the menu options and how will the user use the application?
+
+	The user interface would be through a menu that will display options which a user can choose from.This menu will be looped such 
+	that the user cannot exit the loop unless the user chooses the option to exit from the loop
+	The menu will options will be as follows:
+
+	Chicago Transit Authority(CTA) Terminal
+
+	1.Add a new Station to the CTA
+
+	2.Modify an existing station on the CTA
+
+	3.Remove a station from the CTA
+
+	4.Search for a station on the CTA 
+
+	5.Find the closest station to your coordinates
+
+	6.Find a route between stations
+	
+	7.Exit the application
+	
+	The user will be allowed to choose any of the options which will function as defined in the menu. Since this menu will be 
+	enclosed within a loop a user can choose any of these options any number of times until they choose to exit the application.
+
+2.Describe the programmers' tasks:
+◦Describe how you will read the input file.
+
+	To read a file I will create an arraylist called stations which will be the main arraylist that would be user for all the methods
+	I will open a file path and use the scanner to read through the file by enclosing the method in a while loop that terminates when
+	the file has no more lines I will store the line into a string , split it by ',' using the split function and store it in an array which seperates the individual 
+	values within the line.I would encloses all the file operations within a try and except.
+
+◦Describe how you will process the data from the input file.
+
+	Since there would be only one common class that all the stations would store their data in, which would be the line sub-class.I would 
+	open a null variable of type station at the start of the while loop and user the constructer method of the line class to define the instance
+	variable by placing the elements of the array in their respective positions in the argument of the constructer method.and then add this
+	variable to the stations arraylist.This will be repeated for all the lines within the csv file.
+
+◦Describe how you will store the data (what objects will you store?)
+
+	I will add the instance variable mentioned in the previous sections to the stations arraylist.This will be repeated for all 
+	the lines within the csv file.At the end of the read file method i will return the arraylist stations. Therefore in the 
+	main method i will store this returned arraylist in the newly created stations arraylist in the main method.
+	
+
+◦How will you add/delete/modify data?
+
+	-To add the data i would give the user the option to add necessary data like the name and coordinates of the station and also i 
+	would give the user the choice to decide which lines the station is on and also the position of the station on those lines. Finally
+	I would add these inputed variables to the argument of the line class's constructor method which will be stored in an variable
+	And then i will return this variable to the  main method which would then be added to the main arraylist.
+	
+	-To delete a station i would use the search method that would return an index of the instance in the main arraylist by letting the 
+	user choose a station by entering a name or choosing a station from a list of stations which fit the criteria defined by the user
+	( wheel chair access, line the station lies on ).I would store this index in a variable which would then be used to remove the
+	station from the list
+	
+	-Similarly i would use the search method that would return an index of the instance in the main arraylist by letting the 
+	user choose a station by entering a name or choosing a station from a list of stations which fit the criteria defined by the user
+	( wheel chair access, line the station lies on ).I would then use the get function to get the instance variable and then make 
+	changes to its variable as required by the user by using the setters methods of the station class or the line subclass.
+
+◦How will you search the data?
+
+	i would use the search method that would return an index of the instance variable in the main arraylist by letting the 
+	user choose a station by entering a name or choosing a station from a list of stations which fit the criteria defined by the user
+	( wheel chair access, line the station lies on ).And then display the properties of that variable. To be more detailed on how the 
+	search function works i would allow the user to choose between searching through name or other criteria.For searching through name
+	I would match the name provided by the user to the names of the station stored in the arraylist and then add it to an arraylist.If the
+	list has only one element(only one station of that name) i would return the index of that element in the arraylist else(if there are
+	more than one stations with the same name) then i would let the user choose between the two and return the index of the chosen one
+	For the search by other criteria i would let the user choose the criteria then add all the stations that fit that criteria into a arraylist
+	i would then let the user choose between the elements present in the arraylist and then return the index of that element in the main arraylist.
+
+◦List the classes you will need to implement your application.
+
+	The Main station class will contain the details of a station such as its name, its coordinates, wheelchair access and description
+	It will also contain constructors, the getters and setters for the above variables and a tostring and equals method.This will be 
+	the main class and the other class will be the subclass of this class.The main arraylist will be of the class type station.
+	
+	and 
+	
+	the line subclass which will contain the red,blue,green,brown,pink,purple,orange variable which represent which line a station is 
+	on and what is its position on that line.It will also contain constructors, the getters and setters for the above variables and a 
+	overwritten tostring and equals method.In a addition to these methods it will also have an unique method called details which prints 
+	out the details of a station.The stations will be contructed by calling upon the constructor of this class.
+	
+	As for the classes within the application there would be 
+	ReadExistingfile():Which reads in the csv file and returns an array
+	AddStation():Which requests details from the user and returns the station variable 
+	Search():Which gives the user the option to choose by name or by other criteria and returns an index in the main list.It uses searchbyname() and searchcriteria() functions too.
+	SearchByName():Searches for a station by a name entred by the user and returns the index of that station in the main arraylist
+	SearchCriteria():Searches for a station by the other criteria and gives the user the option to choose one of the stations that meet the criteria and returns the index of that station in the main arraylist
+	RemoveStation():Uses search() and removes the station from that index.
+	SearchStation():Uses search() and gives the details() of that station.
+	ModifyStation():Uses search() and allows the user to make changes to that station.
+	ClosestStation():Uses distance formula and for loop to determine the closest station to the gives coordinates and then returns prints the name of that station
+	FindRoute():Finds a route between two selected stations.Uses SplitStations()
+	SplitStations():Segregates the stations into red,green,blue,brown,purple,pink,orange line lists and returns the list
+	Thre may be more classes if required when writing the program
+	
+3.Draw a UML diagram that shows all classes in the program and their relationships. This can be done however you want. If you want a specific application, StarUML and Draw.io are both good. But you are welcome to use any graphics program or just draw them by hand and scan them.
+
+	Has been uploaded below
+
+4.Think how you will determine if your code functions are expected. Develop a test plan based on the above description; how will you 
+test that the expected outputs have been achieved for every menu option? Be sure this test plan is complete. 
+Your test plan should minimally test each option in the menu-driven user interface for expected behavior as well as error-handling.
+ Your test plan should be in a spreadsheet format (preferably Excel, CSV, or TSV).
+ 
+ 	Has been uploaded as csv as well as in excel form
+ 	
+ 	
+ 	System.out.println("RedLine pos:"+red+"GreenLine position"+green+"\nBlueLine position"+blue+"BrownLine position"+brown+"PurpleLine position"+purple+"\nPinkLine position"+pink+"OrangeLine position"+orange);
+System.out.println("Which line do you wish to add your station to:");
+			System.out.println("1.RedLine \n2.GreenLine\n3.BlueLine\n4.BrownLine\n5.PinkLine\n6.PurpleLine\n7.OrangeLine\n8.Continue");
+			String choice=input.nextLine().stripIndent();

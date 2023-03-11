@@ -1,0 +1,32 @@
+DESCRIPTION OF MENU OPTIONS,EXPECTED OUTPUT,POSSIBLE ERRORS,ACTUAL OUTPUT
+,,,
+1.Add a new station:This menu option is expected to request the user for the details of station for ,This menu option is expected to return a modified arraylist containing the station,Could end up not adding the station to the arraylist,"Asks the user to input name,description,coordinates,position etc and adds this"
+"example what is the stations name, what are its coordinates etc and add this new station to the list",as inputted by the user with details as that provided by the user.,,refrence to the main arrayList after creating it.There are no possible system errors
+of stations,,,and the positions of the stations coming after the added station is also changed.
+,,,
+2.Modify a station:This menu option is expected to ask the user  to search for station to modify by name ,This menu option is expected to return a modified array list containing the modified,Could end up modifying the wrong station or lead to error when the user is dealing with all the ,Asks the user to select a station through the search method and then allows the 
+or by other criteria.And the user will be able to choose a station through the search engine.Then the,station in it,lines the station is on,user to change any characteristics related to the station without causing any errors
+"user will be allowed to make changes to that station such as its name,coordinates, line etc",,,Also allows the user to add or remove a station from a line without an error and 
+,,,and then changes the positions of the other affected stations accordingly
+,,,
+,,,
+3.Remove a station:This menu option is expected to ask the user to search for a station to remove by name,This menu option is expected to return a modified arraylist not containing the station,Could end up removing the wrong station or not remove a station at all,Asks the user to select a station through the search method and then removes the
+or by other criteria.And the user will be able to choose a station through the search engine.Then this selected,the user had selected to remove,,selected station from the main arrayList.It also makes sure to change the positions
+station will be removed from the list of stations,,,of the stations coming after this to accomadate its removal
+,,,
+4.Search for a station:This menu option is expected to ask the user to search for a station to remove by name,This menu option is expected to print the details of the station selected by the user,Could printout the details of the wrong station,Asks the user to select a station through the search method and then displays the
+or by other criteria.And the user will be able to choose a station through the search engine.Then the details,,,details of the station clearly to the user.Makes sure to let the user select a station 
+of this selected station should be shown.,,,if two stations of the same name are detected.(applies for all search methods)
+,,,
+5.Find nearest station:This menu option is expected to ask the user for their coordinates and reurn the station ,This menu option is expected to return the station closest to the coordinates provided,Could give the user the name of the worng station due an error in the formula used,Asks the user to enter their coordinates and then displays the details of the station 
+closest to them duing the distance formula.,by the user.,,closests to those coordinates without leading to any errors.(accurate results)
+,,,
+6.Find route between stations:This menu option is expected to ask the user for the starting and destination ,This menu option is expected to printout out the route from the starting station to,Could lead to an error if they are no transfer stations available for transfer.,Aks the user to select a starting and ending station using the search method and
+stations and generate a path between the two,the destination station no matter which lines they are on,,then displays the route between these two stations.It also makes adjustments if
+,,,a station transfer is required and displays complete route.Displays no path found 
+,,,if no such routes exits.No errors while running this method.
+,,,
+7.Exit:This menu option is expected to exit the application,This menu option is expected to printout a good bye message and exit the application ,Could end up not saving the changes made by the user.,Asks the user whether they wish to save their changes and does accordingly to the 
+,after asking the user whether they wish to save their changes.,,.csv file present in the application.The changes can be noticed in the csv file if any
+,,,changes were made throught the run of the program and if the user chose to save 
+,,,their changes.
